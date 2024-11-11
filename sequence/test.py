@@ -10,6 +10,9 @@ def test_simple_odd():
 def test_simple_even():
 	assert layup_sequence(4) == 5
 
+def test_couple_iterations():
+	assert layup_sequence(7) == 17
+
 def test_10k():
 	result = layup_sequence(10000)
 	print("Layup sequence for n=10,000 is: " + str(result))
