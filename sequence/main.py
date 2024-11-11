@@ -41,6 +41,13 @@ def layup_sequence(n: int) -> int:
 	"""
 	An improved implementation of the Layup Sequence that uses iteration
 	instead of recursion to calculate the result.
+
+	Analysis:
+		This solution has a runtime complexity of O(N) or what we can "linear".
+		You can see with the generated graph the runtime increases linearly,
+		for the same increase in N, we see the same increaes in runtime. In 
+		other words, there is some M so that y= Mx + b would approximate the
+		runtime of this algorithm. On my M3 Mac, that M is .000075
 	"""
 	if type(n) != int:
 		return None
@@ -75,12 +82,19 @@ def main():
 		print(f"Calculating layup_sequence for n: " + str(n_value))
 		start = time.time()
 		layup_sequence(n_value)
-		latency.append(time.time() - start)
+		latency.append(1000*(time.time() - start))
+
+	# Approximation of the runtime graph
+	y = []
+	M = .000075
+	for n_value in n:
+		y.append(M * n_value )
 
 	# Generate the visual
 	fig, ax = plt.subplots()
 	ax.plot(n, latency)
-	ax.set(xlabel='N', ylabel='time (s)',
+	ax.plot(n, y)
+	ax.set(xlabel='N', ylabel='time (ms)',
        title='Latency of Layup Sequence Algorithm')
 	ax.grid()
 	plt.show()
