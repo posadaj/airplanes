@@ -23,3 +23,10 @@ If you have trouble, you may be running the default installed python
 You will need to install python yourself, see here
 
 Run with `python3 main.py`
+
+
+
+Todo
+- Reset functionality
+- Hit boundary? -> Reset
+
