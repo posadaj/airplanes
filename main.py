@@ -28,7 +28,7 @@ class Airplane:
 		self.screen.onkey(self.decrease_speed, "Down")
 		self.screen.onkey(self.turn_left, "Left")
 		self.screen.onkey(self.turn_right, "Right")
-		self.screen.onkey(self.reset, "d")
+		self.screen.onkey(self.reset, "Return")
 		self.screen.listen()
 
 	def increase_speed(self):
